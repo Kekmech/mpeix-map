@@ -36,7 +36,8 @@ class MarkersSource(
                 location = Location(record["lat"].asFloat(), record["lng"].asFloat()),
                 name = record["place_name"].toString(),
                 type = valueOfTypeOfNull(record["place_type"].toString()) ?: MarkerType.UNDEFINED,
-                icon = record["icon"].toString()
+                icon = record["icon"].toString(),
+                tag = record["tag"]?.toString().orEmpty()
             ) }
         markers
     } catch (e: Exception) {
