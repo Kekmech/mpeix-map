@@ -19,7 +19,7 @@ class MarkersSource(
 
     override val cache: Cache<Unit, List<MapMarker>> = Caffeine.newBuilder()
         .maximumSize(1L)
-        .expireAfterAccess(Duration.ofHours(24L))
+        .expireAfterAccess(Duration.ofHours(1L))
         .build<Unit, List<MapMarker>>()
 
     /**
